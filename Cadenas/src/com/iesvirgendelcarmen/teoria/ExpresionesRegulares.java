@@ -6,7 +6,7 @@ public class ExpresionesRegulares {
 	public static void main(String[] args) {
 		// 1- Leer dni valido
 		// 2- Leer numero de telefono movil valido
-		
+		//
 		
 		String regex = "^[0-9]{8}[TRWAGMYFPDXBNJZSQVHLCKE]?$";
 		String telfRegex = "^(\\+?[\\d]){3}[67][\\d]{8}$";

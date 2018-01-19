@@ -9,7 +9,7 @@ public class ManipularDouble {
 		// leer scanner
 		// aplicar la exp regular
 		// reemplazar las comas por puntos
-		// convertir string a double
+		// convertir string a doublea
 		// mostrar raiz cubica
 		// [\\d] = [0-9]
 		//String decimalRegex = "^(\\-?[\\d]?)||(\\-?[\\d]*\\.?[\\d]*)";

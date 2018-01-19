@@ -7,7 +7,7 @@ public class Cadenas1 {
 		String cadena1 = "hola";
 		String cadena2 = "hola";
 		String cadena3 = new String("hola");
-		//String cadena4 = new String("hola");
+		//String cadena4 = new String("holaa");
 		
 		System.out.println("cadena1==cadena2 "+(cadena1==cadena2));
 		System.out.println("cadena2==cadena3 "+(cadena2==cadena3));
