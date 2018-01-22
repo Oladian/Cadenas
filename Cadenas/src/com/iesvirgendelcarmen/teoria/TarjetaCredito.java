@@ -9,6 +9,8 @@ package com.iesvirgendelcarmen.teoria;
   * 1234567812345678 (no valido)
   * 4487653906343876 (valido)
   * 4168818844447115 (valido)
+  * 1234123412341234 (no valido)
+  * 2345234523452345
   */
 import java.util.Scanner;
 
@@ -24,6 +26,7 @@ public class TarjetaCredito {
 		
 		boolean valido = input.trim().matches(regex);
 		System.out.println("¿Numero de tarjeta valido? - "+valido);
+		convertirCaracter(input);
 		
 		if (valido) {
 			System.out.println(testDeLuhn(input));
@@ -51,6 +54,21 @@ public class TarjetaCredito {
 		}
 		System.out.println("La tarjeta es: ");
 		return ((suma1+suma2))%10==0;
+	}
+	
+	public static void convertirCaracter(String numeroTarjeta) {
+		int suma = 0;
+		for (int i=0; i < numeroTarjeta.length()-1;i++) {
+			int numero = numeroTarjeta.charAt(i)-48;
+			if (i % 2 != 0) {
+				numero *=2;
+			}
+			suma += numero;
+		}
+		int multiplicacion = suma *= 9;
+		String multiplicacionCadena = multiplicacion+"";
+		String ultimoNumero = multiplicacionCadena.substring(multiplicacionCadena.length()-1);
+		System.out.println("Ultimo numero "+ultimoNumero);
 	}
 }
 
