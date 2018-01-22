@@ -1,6 +1,7 @@
 package com.iesvirgendelcarmen.ejercicios;
 
 //https://www.regexpal.com/
+//http://www.mkyong.com/regular-expressions/how-to-validate-password-with-regular-expression/
 
 public class SafeKey {
 	private String key;
