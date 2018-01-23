@@ -36,7 +36,7 @@ public class TarjetaCredito {
 	public static boolean testDeLuhn(String input) {
 		int suma1 = 0;
 		int suma2 = 0;
-		String inputDelReves = new StringBuffer(input).reverse().toString(); //ES IMPORTANTE DARLE LA VUELTA
+		String inputDelReves = new StringBuilder(input).reverse().toString(); //ES IMPORTANTE DARLE LA VUELTA, para que sea String hay que convertirlo con toString()
 		
 		for (int i=0; i<inputDelReves.length();i++) {
 			int digito = Character.digit(inputDelReves.charAt(i), 10);

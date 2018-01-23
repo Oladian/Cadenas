@@ -24,7 +24,7 @@ package com.iesvirgendelcarmen.ejercicios;
 
 
 public class ReadWord {
-	static String valor = "reconocer".toLowerCase();	
+	static String valor = "ahaecOnOceaha".toLowerCase();	
 	
 	public static void main(String[] args) {
 		System.out.printf("%s%nNumero de letras: %d%n"
@@ -36,7 +36,7 @@ public class ReadWord {
 				+ "Son iguales: %b%n",
 				valor,numberOfLetters(),startWithVowel(),
 				endsWithVowel(),numberOfVowels(),containsH(),
-				isPalindrome(),areEquals(args[0]));
+				isPalindrome(),areEquals("ahaeconoceaha"));
 	}
 	
 	public static int numberOfLetters() {
@@ -47,23 +47,28 @@ public class ReadWord {
 		/*String lowerString = valor.toLowerCase();
 		return lowerString.startsWith("a")||lowerString.startsWith("e")||lowerString.startsWith("i")
 				||lowerString.startsWith("o")||lowerString.startsWith("u");*/
-		return valor.trim().matches("^[aeiou|AEIOU]+[\\w]*");
+		return valor.trim().matches("^[aeiou]+[\\w]*"); // -> ^[aeiouáéíóíú].*
 	}
 	
 	public static boolean endsWithVowel() {
-		return valor.trim().matches("[\\w]*[aeiou|AEIOU]$");
+		return valor.trim().matches("[\\w]*[aeiou]$"); // -> [\\w]*[aeiou]$
 	}
 	
 	public static int numberOfVowels() {
 		int sum = 0;
 		for (int i=0; i < valor.length();i++) {
-			if(valor.charAt(i) == 'a' 
+		/*	if(valor.charAt(i) == 'a' 
 				||valor.charAt(i) == 'e' 
 				||valor.charAt(i) == 'i' 
 				||valor.charAt(i) == 'o' 
 				||valor.charAt(i) == 'u') {
 					sum+=1; 
+			}*/
+			String word = new String(valor.toLowerCase().charAt(i)+""); //consume mas memoria
+			if (word.matches("[aeiou]")) {
+				sum+=1;
 			}
+		
 		}
 		return sum;
 	}
@@ -77,6 +82,6 @@ public class ReadWord {
 	}
 	
 	public static boolean areEquals(String word) {
-		return valor.toLowerCase().equals(word.toLowerCase());
+		return valor.equalsIgnoreCase(word.toLowerCase());
 	}
 }

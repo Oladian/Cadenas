@@ -16,14 +16,14 @@ public class SafeKey {
 	
 	public boolean isSafeKey() { //8 caracteres, 1 mayus, 1 minus, 1 numero, 1 caracter no alfanumerico
 		
-		String regexEightChars = "^(?=.*\\d)"
+		String regexSafeKey = "^(?=.*\\d)"
 				+ "(?=.*[a-z])"
 				+ "(?=.*[A-Z])"
 				+ "(?=.*[^a-zA-Z0-9])"
 				+ "(?![^aAbBcCdDeEfFgGhHiIjJkKlLmMnNñÑoOpPqQrRsStTuUvVwWxXyYzZ0123456789"
 				+ "\\¿\\?\\(\\)\\=\\@\\.\\:\\,\\;\\!\\¡\\&\\~\\ \\{\\}]).{8,}$"; 
 
-		return getKey().matches(regexEightChars);
+		return getKey().matches(regexSafeKey);
 		
 		/*
 		 * Description
