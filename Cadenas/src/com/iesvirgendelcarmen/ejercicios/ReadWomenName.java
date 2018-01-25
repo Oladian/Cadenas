@@ -81,21 +81,21 @@ public class ReadWomenName {
 	
 	public static ArrayList<String> getShorterNames (ArrayList<String> stringList) {
 		ArrayList<String> womenLargerNameList = new ArrayList<String>();
-		String largerString = stringList.get(0);
+		String shorterString = stringList.get(0);
 		
-		womenLargerNameList.add(largerString);
+		womenLargerNameList.add(shorterString);
 		if (womenLargerNameList.size()==0)
 			return womenLargerNameList;
 		
 		for (int i=1; i<stringList.size();i++) {
-			if (stringList.get(i).length()<largerString.length()) {
+			if (stringList.get(i).length()<shorterString.length()) {
 				
 				womenLargerNameList.clear();
 				womenLargerNameList.add(stringList.get(i));
-				largerString = stringList.get(i);
+				shorterString = stringList.get(i);
 			}
 			
-			if (stringList.get(i).length()==largerString.length())
+			if (stringList.get(i).length()==shorterString.length())
 				womenLargerNameList.add(stringList.get(i));
 		}
 		
