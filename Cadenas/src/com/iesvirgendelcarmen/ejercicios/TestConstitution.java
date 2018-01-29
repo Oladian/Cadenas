@@ -13,34 +13,21 @@ public class TestConstitution {
 	public static void main(String[] args) throws FileNotFoundException {
 	
 		//Scanner sc = new Scanner(System.in);
-		Scanner sc = new Scanner(new File("C:\\Users\\matinal\\Desktop\\constitucion.txt"));
+		Scanner sc = new Scanner(new File("C:\\Users\\matinal\\Desktop\\Iz\\constitucion.txt"));
 		String string = sc.nextLine();
 		ArrayList<String> stringList = new ArrayList<String>();
-		int counter=0;
-		
+				
 		while (sc.hasNext()) {
-			string = sc.next().trim().replaceAll("[\\.,;:\\-]","");
+			string = sc.next().trim().replaceAll("[\\.,;:\\-¿\\?¡!\\(\\)\"']","");
 			
 			if (string!=null||string!="") {
 				stringList.add(string);
-				counter++;
-				System.out.println(string);
+				//System.out.println(string);
 			}
 
 		}
 		sc.close();
 		
-		/*		while (sc.hasNextLine()) {
-		
-		Scanner sc2 = new Scanner(sc.nextLine());
-		
-		while(sc2.hasNext()){
-			string = sc2.next().trim();
-			stringList.add(string);
-			counter++;
-		}
-	}*/
-
 		String[] sb500 = new String[500];
 		int random = 0;
 		
@@ -48,9 +35,20 @@ public class TestConstitution {
 			random = (int) (Math.random()*stringList.size());
 			sb500[i]=new StringBuilder(stringList.get(random))+"";
 		}
-		//System.out.println(sb500[3]);
-		System.out.println(wordNumber(sb500));
-		System.out.println(prepositionNumber(sb500));
+		
+		StringBuilder builder = new StringBuilder();
+		for(String string500 : sb500) {
+		    builder.append(string500+" ");
+		}
+		
+		String string500Builded = builder.toString();
+		
+		System.out.println(wordNumber(string500Builded));
+		System.out.println(prepositionNumber(string500Builded));
+		System.out.println(determinedArticlesNumber(string500Builded));
+		System.out.println(undeterminedArticlesNumber(string500Builded));
+		System.out.println(returnUpperCase(300,500,string500Builded));
+		
 	} 
 	
 }
