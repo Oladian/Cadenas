@@ -21,5 +21,16 @@ public class Cadenas1 {
 		System.out.println(cadenaDividida);
 		String outputCadena = String.format("%d/%S/%d", 17,"enero",2018);
 		System.out.println(outputCadena);
+		
+		String str = new String("Hello World");
+		
+		StringBuffer sBuffer = new StringBuffer(new StringBuilder(str));
+		
+		str = sBuffer.reverse().toString();
+		System.out.println(str);
+		String str1 = "dlroW olleeH";
+		
+		System.out.println(str1.compareTo(str));
+		System.out.println(str1.equals(str));
 	}
 }
